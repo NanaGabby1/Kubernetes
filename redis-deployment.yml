@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-deployment
+  labels:
+    name: redis-pod
+    author: nana
+    labels: worker-app-deployment
+spec:
+  replicas:1
+  selector:
+    matchLabels:
+      names: worker-app-deployment
+  template:
+    metadata:
+      name: worker-deployment
+    spec:
+      containers:
+        - name: redis
+          image: redis
+...

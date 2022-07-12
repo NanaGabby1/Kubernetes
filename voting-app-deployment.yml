@@ -1,0 +1,13 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voting-app-deployment
+  labels:
+    name: voting-app-deployment
+    author: nana
+spec:
+  containers:
+    - name: voting-app
+      image: dockersamples/examplevotingapp_vote
+...
